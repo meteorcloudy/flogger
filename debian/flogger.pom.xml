@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2018 The Flogger Authors.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <groupId>com.google.flogger</groupId>
+  <artifactId>flogger</artifactId>
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <skipTests>true</skipTests>
+  </properties>
+  <name>Flogger</name>
+  <version>0.5.1</version>
+  <description>A Fluent Logging API for Java</description>
+  <url>https://github.com/google/flogger</url>
+
+<build>
+<plugins>
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <configuration>
+    <source>1.8</source>
+    <target>1.8</target>
+    <excludes>
+<!--       <exclude>com/google/common/flogger/util/Checks.java</exclude>
+      <exclude>com/google/common/flogger/util/StaticMethodCaller.java</exclude>
+      <exclude>com/google/common/flogger/backend/KeyValueFormatter.java</exclude>
+      <exclude>com/google/common/flogger/backend/KeyValueHandler.java</exclude>
+      <exclude>com/google/common/flogger/backend/Tags.java</exclude>
+      <exclude>com/google/common/flogger/context/*.java</exclude>
+      <exclude>com/google/common/flogger/LazyArg.java</exclude>
+      <exclude>com/google/common/flogger/LazyArgs.java</exclude>
+      <exclude>com/google/common/flogger/LogSiteStackTrace.java</exclude>
+      <exclude>com/google/common/flogger/StackSize.java</exclude>
+      <exclude>com/google/common/flogger/LoggerConfig.java</exclude>
+      <exclude>com/google/common/flogger/LogSite.java</exclude>
+      <exclude>com/google/common/flogger/LogSiteKey.java</exclude>
+      <exclude>com/google/common/flogger/LogSites.java</exclude> -->
+      <exclude>com/google/common/flogger/backend/system/**/*.java</exclude>
+    </excludes>
+  </configuration>
+</plugin>
+</plugins>
+</build>
+
+  <scm>
+    <url>https://github.com/google/flogger/</url>
+    <connection>scm:git:git://github.com/google/flogger.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/google/flogger.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/google/flogger/issues</url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Google, Inc.</name>
+    <url>https://www.google.com</url>
+  </organization>
+
+  <dependencies>
+<dependency>
+  <groupId>org.checkerframework</groupId>
+  <artifactId>checker-compat-qual</artifactId>
+  <version>2.5.3</version>
+</dependency>
+<dependency>
+    <groupId>com.google.errorprone</groupId>
+    <artifactId>error_prone_annotations</artifactId>
+    <version>2.3.2</version>
+</dependency>
+<dependency>
+    <groupId>com.google.flogger</groupId>
+    <artifactId>platform-provider</artifactId>
+    <version>LOCAL-SNAPSHOT</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/platform_provider.jar</systemPath>
+</dependency>
+  </dependencies>
+</project>
